@@ -1,3 +1,5 @@
+*Forked from [xvvvyz/tilde](https://github.com/xvvvyz/tilde)*
+
 # Tilde
 
 Inspired by [r/startpages](https://www.reddit.com/r/startpages)&mdash;Tilde is a
@@ -21,10 +23,10 @@ query. e.g:
 - `y kittens` will
   [search YouTube for kittens](https://www.youtube.com/results?search_query=kittens)
 
-A DuckDuckGo search will be triggered if your input doesn&rsquo;t match a key.
+A Startpage search will be triggered if your input doesn't match a key.
 e.g:
 
-- `google` will [search DuckDuckGo for google](https://duckduckgo.com/?q=google)
+- `google` will [search Startpage for google](https://www.startpage.com/do/dsearch?query=google)
 
 To go to a specific path on a site, type the path after the site&rsquo;s key.
 e.g:
@@ -33,9 +35,6 @@ e.g:
   [reddit.com/r/startpages](https://www.reddit.com/r/startpages)
 - `h/popular` will redirect you to [hypem.com/popular](http://hypem.com/popular)
 
-## Beyond
-
-Tilde is meant to be customized&mdash;[make it yours!](index.html)
 
 ## License
 
