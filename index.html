@@ -29,13 +29,15 @@
     //   ],
     //   url: 'https://us-west-2.console.aws.amazon.com/console/home',
     // },
-    c: {
-      name: 'NextCloud',
-      // searchTemplate: '/calendar/u/0/r/search?q={}',
-      // suggestions: ['c/calendar/u/1/r', 'c/calendar/u/2/r'],
-      url: 'https://192.168.1.71:8443/apps/dashboard/',
+    dc: {
+      name: 'Discord',
+      // suggestions: [
+        // 'o/channels/803833399684628520',
+        // 'o/channels/830183651022471199',
+      // ],
+      url: 'https://discord.com/channels/@me',
     },
-    d: {
+    dp: {
       name: 'Debug-Pro',
       // searchTemplate: '/drive/u/0/search?q={}',
       // suggestions: ['d/drive/u/1/my-drive', 'd/drive/u/2/my-drive'],
@@ -50,14 +52,23 @@
     //   ],
     //   url: 'https://www.figma.com/files/recent',
     // },
-    g: {
+    gg: {
+      name: 'Google',
+      searchTemplate: '/search?q={}',
+      suggestions: [
+        'gg/maps',
+        'gg/translate',
+      ],
+      url: 'https://www.google.com',
+    },
+    gh: {
       name: 'GitHub',
       searchTemplate: '/search?q={}',
       suggestions: [
         // 'g/topics',
         // 'gist.github.com',
-        'g/Xavier2p',
-        'g/Xavier2p/dotfiles',
+        'gh/Xavier2p',
+        'gh/Xavier2p/dotfiles',
       ],
       url: 'https://github.com',
     },
@@ -108,13 +119,21 @@
       //],
       url: 'https://www.notion.so',
     },
-    dc: {
-      name: 'Discord',
-      // suggestions: [
-        // 'o/channels/803833399684628520',
-        // 'o/channels/830183651022471199',
-      // ],
-      url: 'https://discord.com/channels/@me',
+    nc: {
+      name: 'NextCloud',
+      // searchTemplate: '/calendar/u/0/r/search?q={}',
+      // suggestions: ['c/calendar/u/1/r', 'c/calendar/u/2/r'],
+      url: 'https://192.168.1.71:8443/apps/dashboard/',
+    },
+    od: {
+      name: 'OneDrive',
+      searchTemplate: '?q=test{}&view=7&searchScope=all',
+      url: 'https://epitafr-my.sharepoint.com/personal/xavier_de-place_epita_fr/_layouts/15/onedrive.aspx',
+    },
+    of: {
+      name: 'Office',
+      searchTemplate: '/search?q={}',
+      url: 'https://www.office.com',
     },
     p: {
       name: 'Past Exams',
