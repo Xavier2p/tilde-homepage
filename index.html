@@ -15,139 +15,193 @@
     suggestionLimit: 4,
   };
 
-  const COMMANDS = {
-    0: {
-      name: 'Local',
-      searchTemplate: ':{}',
-      suggestions: ['0 8000', '0 54323'],
-      url: 'http://localhost:3000',
-    },
-    dc: {
-      name: 'Discord',
-      // suggestions: [
-      // 'o/channels/803833399684628520',
-      // 'o/channels/830183651022471199',
-      // ],
-      url: 'https://discord.com/channels/@me',
-    },
-    de: {
-      name: 'Deepl',
-      url: 'https://www.deepl.com/translator',
-    },
-    dp: {
-      name: 'Debug-Pro',
-      url: 'http://www.debug-pro.com/epita/prog/s3/',
-    },
-    gg: {
-      name: 'Google',
-      searchTemplate: '/search?q={}',
-      suggestions: [
-        'gg/maps',
-        'gg/translate',
-      ],
-      url: 'https://www.google.com',
-    },
-    gh: {
-      name: 'GitHub',
-      searchTemplate: '/search?q={}',
-      suggestions: [
-        'gh/Xavier2p',
-        'gh/Xavier2p/dotfiles',
-        'gh/Xavier2p/fortran.rs',
-        'gh/Xavier2p/tilde-homepage',
-      ],
-      url: 'https://github.com',
-    },
-    i: {
-      name: 'Intra',
-      url: 'https://intra.forge.epita.fr/',
-    },
-    l: {
-      name: 'LinkedIn',
-      searchTemplate: '/search/results/all/?keywords={}',
-      suggestions: [
-        'l/in/me/',
-      ],
-      url: 'https://www.linkedin.com',
-    },
-    m: {
-      name: 'Moodle',
-      url: 'https://moodle.cri.epita.fr/my/',
-    },
-    n: {
-      name: 'Notion',
-      // suggestions: [
-      //'n/03aac6c591aa435b90f5c9b007409af3',
-      //'n/f47d92b8272442f5ad13e4eb3288778f',
-      //],
-      url: 'https://www.notion.so',
-    },
-    nc: {
-      name: 'NextCloud',
-      url: 'https://192.168.1.71:8443/apps/dashboard/',
-    },
-    od: {
-      name: 'OneDrive',
-      searchTemplate: '?q=test{}&view=7&searchScope=all',
-      url: 'https://epitafr-my.sharepoint.com/personal/xavier_de-place_epita_fr/_layouts/15/onedrive.aspx',
-    },
-    of: {
-      name: 'Office',
-      searchTemplate: '/search?q={}',
-      url: 'https://www.office.com',
-    },
-    p: {
-      name: 'Past Exams',
-      suggestions: [
-        'p/S3/Finals',
-        'p/S3/Retakes',
-      ],
-      url: 'https://past-exams.epidocs.eu/',
-    },
-    r: {
-      name: 'Reddit',
-      searchTemplate: '/search?q={}',
-      suggestions: [
-        'r/r/startpages',
-        'r/r/cableporn',
-        'r/r/unixporn',
-      ],
-      url: 'https://www.reddit.com',
-    },
-    s: {
-      name: 'Server',
-      searchTemplate: ':{}',
-      suggestions: [
-        's 4000',
-        's 9000',
-        's 8132',
-      ],
-      url: 'http://192.168.1.71',
-    },
-    uu: {
-      name: '+4U',
-      suggestions: [
-        'uu/settings',
-        'uu/userGate/'
-      ],
-      url: 'https://uuapp.plus4u.net/uu-myterritory-maing01/f79b4ac514754040af18e7687cec165b'
-    },
-    yt: {
-      name: 'YouTube',
-      searchTemplate: '/results?search_query={}',
-      suggestions: [
-        'yt/trending',
-        'yt/music',
-        'yt/gaming',
-        'yt/sports',
-      ],
-      url: 'https://youtube.com/feed/subscriptions',
-    },
-    '?': {
-      name: 'README.md',
-      url: 'https://read.xvvvyz.xyz/xvvvyz/tilde/main/README.md',
-    },
-  };
+  const COMMANDS = new Map([
+    [
+      '0',
+      {
+        name: 'Local',
+        searchTemplate: ':{}',
+        suggestions: ['0 8000', '0 54323'],
+        url: 'http://localhost:3000',
+      },
+    ],
+    [
+      '4u',
+      {
+        name: '+4U',
+        suggestions: [
+          'uu/settings',
+          'uu/userGate/'
+        ],
+        url: 'https://uuapp.plus4u.net/uu-myterritory-maing01/f79b4ac514754040af18e7687cec165b'
+      },
+    ],
+    [
+      'dc',
+      {
+        name: 'Discord',
+        // suggestions: [
+        // 'o/channels/803833399684628520',
+        // 'o/channels/830183651022471199',
+        // ],
+        url: 'https://discord.com/channels/@me',
+      },
+    ],
+    [
+      'de',
+      {
+        name: 'Deepl',
+        url: 'https://www.deepl.com/translator',
+      },
+    ],
+    [
+      'dp',
+      {
+        name: 'Debug-Pro',
+        suggestions: [
+          'dp/s3',
+          'dp/s4',
+        ],
+        url: 'http://www.debug-pro.com/epita/prog/',
+      },
+    ],
+    [
+      'gg',
+      {
+        name: 'Google',
+        searchTemplate: '/search?q={}',
+        suggestions: [
+          'gg/maps',
+          'gg/translate',
+        ],
+        url: 'https://www.google.com',
+      },
+    ],
+    [
+      'gh',
+      {
+        name: 'GitHub',
+        searchTemplate: '/search?q={}',
+        suggestions: [
+          'gh/Xavier2p',
+          'gh/Xavier2p/dotfiles',
+          'gh/Xavier2p/fortran.rs',
+          'gh/Xavier2p/tilde-homepage',
+        ],
+        url: 'https://github.com',
+      },
+    ],
+    [
+      'i',
+      {
+        name: 'Intra',
+        url: 'https://intra.forge.epita.fr/',
+      },
+    ],
+    [
+      'l',
+      {
+        name: 'LinkedIn',
+        searchTemplate: '/search/results/all/?keywords={}',
+        suggestions: [
+          'l/in/me/',
+        ],
+        url: 'https://www.linkedin.com',
+      },
+    ],
+    [
+      'm',
+      {
+        name: 'Moodle',
+        url: 'https://moodle.cri.epita.fr/my/',
+      },
+    ],
+    [
+      'n',
+      {
+        name: 'Notion',
+        // suggestions: [
+        //'n/03aac6c591aa435b90f5c9b007409af3',
+        //'n/f47d92b8272442f5ad13e4eb3288778f',
+        //],
+        url: 'https://www.notion.so',
+      },
+    ],
+    [
+      'nc',
+      {
+        name: 'NextCloud',
+        url: 'https://192.168.1.71:8443/apps/dashboard/',
+      },
+    ],
+    [
+      'od',
+      {
+        name: 'OneDrive',
+        searchTemplate: '?q=test{}&view=7&searchScope=all',
+        url: 'https://epitafr-my.sharepoint.com/personal/xavier_de-place_epita_fr/_layouts/15/onedrive.aspx',
+      },
+    ],
+    [
+      'of',
+      {
+        name: 'Office',
+        searchTemplate: '/search?q={}',
+        url: 'https://www.office.com',
+      },
+    ],
+    [
+      'p',
+      {
+        name: 'Past Exams',
+        suggestions: [
+          'p/S3/Finals',
+          'p/S3/Retakes',
+        ],
+        url: 'https://past-exams.epidocs.eu/',
+      },
+    ],
+    [
+      'r',
+      {
+        name: 'Reddit',
+        searchTemplate: '/search?q={}',
+        suggestions: [
+          'r/r/startpages',
+          'r/r/cableporn',
+          'r/r/unixporn',
+        ],
+        url: 'https://www.reddit.com',
+      },
+    ],
+    [
+      's',
+      {
+        name: 'Server',
+        searchTemplate: ':{}',
+        suggestions: [
+          's 4000',
+          's 9000',
+          's 8132',
+        ],
+        url: 'http://192.168.1.71',
+      },
+    ],
+    [
+      'yt',
+      {
+        name: 'YouTube',
+        searchTemplate: '/results?search_query={}',
+        suggestions: [
+          'yt/trending',
+          'yt/music',
+          'yt/gaming',
+          'yt/sports',
+        ],
+        url: 'https://youtube.com/',
+      },
+    ],
+  ]);
 </script>
 
 <template id="commands-template">
@@ -185,7 +239,7 @@
     #renderCommands() {
       const template = document.getElementById('command-template');
 
-      for (const [key, { name, url }] of Object.entries(COMMANDS)) {
+      for (const [key, { name, url }] of COMMANDS.entries()) {
         if (!name || !url) continue;
         const clone = template.content.cloneNode(true);
         const command = clone.querySelector('.command');
@@ -271,6 +325,7 @@
         const script = document.createElement('script');
         document.querySelector('head').appendChild(script);
         script.src = `https://duckduckgo.com/ac/?callback=autocompleteCallback&q=${search}`;
+        script.onload = script.remove;
       });
     }
 
@@ -298,16 +353,16 @@
         return { query, url };
       }
 
-      if (COMMANDS[query]) {
-        const { key, url } = COMMANDS[query];
+      if (COMMANDS.has(query)) {
+        const { key, url } = COMMANDS.get(query);
         return { key, query, url };
       }
 
       let splitBy = CONFIG.commandSearchDelimiter;
       const [searchKey, rawSearch] = query.split(new RegExp(`${splitBy}(.*)`));
 
-      if (COMMANDS[searchKey]) {
-        const { searchTemplate, url: base } = COMMANDS[searchKey];
+      if (COMMANDS.has(searchKey)) {
+        const { searchTemplate, url: base } = COMMANDS.get(searchKey);
         const search = rawSearch.trim();
         const url = Search.#formatSearchUrl(base, searchTemplate, search);
         return { key: searchKey, query, search, splitBy, url };
@@ -316,8 +371,8 @@
       splitBy = CONFIG.commandPathDelimiter;
       const [pathKey, path] = query.split(new RegExp(`${splitBy}(.*)`));
 
-      if (COMMANDS[pathKey]) {
-        const { url: base } = COMMANDS[pathKey];
+      if (COMMANDS.has(pathKey)) {
+        const { url: base } = COMMANDS.get(pathKey);
         const [baseUrl] = Search.#splitUrl(base);
         const url = `${baseUrl}/${path}`;
         return { key: pathKey, path, query, splitBy, url };
@@ -367,22 +422,24 @@
     }
 
     #onInput = async () => {
-      const q = Search.#parseQuery(this.#refs.input.value);
+      const oq = Search.#parseQuery(this.#refs.input.value);
 
-      if (!q.query) {
+      if (!oq.query) {
         this.#close();
         return;
       }
 
-      let suggestions = COMMANDS[q.query]?.suggestions ?? [];
+      let suggestions = COMMANDS.get(oq.query)?.suggestions ?? [];
 
-      if (q.search && suggestions.length < CONFIG.suggestionLimit) {
-        const res = await Search.#fetchDuckDuckGoSuggestions(q.search);
-        const formatted = Search.#attachSearchPrefix(res, q);
+      if (oq.search && suggestions.length < CONFIG.suggestionLimit) {
+        const res = await Search.#fetchDuckDuckGoSuggestions(oq.search);
+        const formatted = Search.#attachSearchPrefix(res, oq);
         suggestions = suggestions.concat(formatted);
       }
 
-      this.#renderSuggestions(suggestions, q.query);
+      const nq = Search.#parseQuery(this.#refs.input.value);
+      if (nq.query !== oq.query) return;
+      this.#renderSuggestions(suggestions, oq.query);
     };
 
     #onKeydown = (e) => {
@@ -468,7 +525,7 @@
 </script>
 
 <main>
-  <!-- <h1>~</h1><br> -->
+  <h1>~</h1><br>
   <commands-component></commands-component>
   <search-component></search-component>
 </main>
