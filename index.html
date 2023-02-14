@@ -3,7 +3,8 @@
 <meta name="color-scheme" content="dark light" />
 <meta name="robots" content="noindex" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>/home/firefox | Xavier2p</title>
+<link rel="stylesheet" href="styles/main.css" />
+<title>/home/arc | Xavier2p</title>
 
 <script>
   const CONFIG = {
@@ -21,39 +22,22 @@
       suggestions: ['0 8000', '0 54323'],
       url: 'http://localhost:3000',
     },
-    // a: {
-    //   name: 'AWS',
-    //   suggestions: [
-    //     'a/cognito/v2/idp/user-pools',
-    //     'a/dynamodbv2#item-explorer',
-    //   ],
-    //   url: 'https://us-west-2.console.aws.amazon.com/console/home',
-    // },
     dc: {
       name: 'Discord',
       // suggestions: [
-        // 'o/channels/803833399684628520',
-        // 'o/channels/830183651022471199',
+      // 'o/channels/803833399684628520',
+      // 'o/channels/830183651022471199',
       // ],
       url: 'https://discord.com/channels/@me',
     },
     de: {
-        name: 'Deepl',
-        url: 'https://www.deepl.com/translator',
+      name: 'Deepl',
+      url: 'https://www.deepl.com/translator',
     },
     dp: {
       name: 'Debug-Pro',
       url: 'http://www.debug-pro.com/epita/prog/s3/',
     },
-    // f: {
-    //   name: 'Figma',
-    //   suggestions: [
-    //     'f/file/new',
-    //     'f/file/new?editor_type=whiteboard',
-    //     'f/community',
-    //   ],
-    //   url: 'https://www.figma.com/files/recent',
-    // },
     gg: {
       name: 'Google',
       searchTemplate: '/search?q={}',
@@ -74,23 +58,6 @@
       ],
       url: 'https://github.com',
     },
-    // h: {
-    //   name: 'Hypem',
-    //   searchTemplate: '/search/{}',
-    //   suggestions: [
-    //     'h/stack',
-    //     'h/mixes',
-    //     'h/popular/lastweek',
-    //     'h/tags',
-    //   ],
-    //   url: 'https://hypem.com/popular',
-    // },
-    // k: {
-    //   name: 'Keep',
-    //   searchTemplate: '/u/0/#search/text={}',
-    //   suggestions: ['k/u/1', 'k/u/2'],
-    //   url: 'https://keep.google.com/u/0',
-    // },
     i: {
       name: 'Intra',
       url: 'https://intra.forge.epita.fr/',
@@ -110,8 +77,8 @@
     n: {
       name: 'Notion',
       // suggestions: [
-        //'n/03aac6c591aa435b90f5c9b007409af3',
-        //'n/f47d92b8272442f5ad13e4eb3288778f',
+      //'n/03aac6c591aa435b90f5c9b007409af3',
+      //'n/f47d92b8272442f5ad13e4eb3288778f',
       //],
       url: 'https://www.notion.so',
     },
@@ -133,7 +100,7 @@
       name: 'Past Exams',
       suggestions: [
         'p/S3/Finals',
-        'p/S3/Retakes', 
+        'p/S3/Retakes',
       ],
       url: 'https://past-exams.epidocs.eu/',
     },
@@ -157,24 +124,6 @@
       ],
       url: 'http://192.168.1.71',
     },
-    // t: {
-    //   name: 'Twitter',
-    //   searchTemplate: '/search?q={}',
-    //   suggestions: [
-    //     't/explore/tabs/trending',
-    //     't/hashtag/buildinpublic?f=live',
-    //   ],
-    //   url: 'https://twitter.com/home',
-    // },
-    // u: {
-    //   name: 'Supabase',
-    //   url: 'https://app.supabase.com/projects',
-    // },
-    // v: {
-    //   name: 'Vercel',
-    //   suggestions: ['v/dashboard/usage', 'v/xvvvyz/llist/deployments'],
-    //   url: 'https://vercel.com/dashboard',
-    // },
     uu: {
       name: '+4U',
       suggestions: [
@@ -201,84 +150,8 @@
   };
 </script>
 
-<style>
-  :root {
-    --color-background: #111;
-    --color-text-subtle: #999;
-    --color-text: #eee;
-    --font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
-      Ubuntu, Roboto, Noto, Segoe UI, Arial, sans-serif;
-    --font-size-1: 1rem;
-    --font-size-2: 3rem;
-    --font-size-base: clamp(90%, 1.4vw, 120%);
-    --font-weight-bold: 700;
-    --font-weight-normal: 400;
-    --line-height-base: 1.4;
-    --space-1: 1rem;
-    --space-2: 4rem;
-    --transition-speed: 200ms;
-  }
-
-  @media (prefers-color-scheme: light) {
-    :root {
-      --color-background: #eee;
-      --color-text-subtle: #777;
-      --color-text: #111;
-    }
-  }
-
-  html {
-    background-color: var(--color-background);
-    color: var(--color-text);
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
-  }
-
-  body {
-    margin: 0;
-  }
-</style>
-
 <template id="commands-template">
-  <style>
-    .commands {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      list-style: none;
-      margin: 0 auto;
-      max-width: 55rem;
-      padding: 0;
-    }
-
-    .command {
-      color: var(--color-text-subtle);
-      display: flex;
-      outline: 0;
-      padding: var(--space-1);
-      text-decoration: none;
-      transition: color var(--transition-speed);
-    }
-
-    li:last-of-type>.command {
-      color: var(--color-text);
-    }
-
-    .command:hover {
-      color: var(--color-text);
-    }
-
-    .key {
-      text-align: center;
-      width: 1ch;
-    }
-
-    .name {
-      margin-left: var(--space-1);
-    }
-  </style>
+  <link rel="stylesheet" href="styles/commands.css" />
   <nav>
     <menu class="commands"></menu>
   </nav>
@@ -329,107 +202,7 @@
 </script>
 
 <template id="search-template">
-  <style>
-    input,
-    button {
-      -moz-appearance: none;
-      -webkit-appearance: none;
-      background: transparent;
-      border: 0;
-      display: block;
-      outline: 0;
-    }
-
-    .dialog {
-      align-items: center;
-      background: var(--color-background);
-      border: none;
-      display: none;
-      flex-direction: column;
-      height: 100%;
-      justify-content: center;
-      left: 0;
-      padding: 0;
-      top: 0;
-      width: 100%;
-    }
-
-    .dialog[open] {
-      display: flex;
-    }
-
-    .form {
-      width: 100%;
-    }
-
-    .input {
-      font-size: var(--font-size-2);
-      font-weight: var(--font-weight-bold);
-      padding: 0;
-      text-align: center;
-      width: 100%;
-    }
-
-    .suggestions {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-      list-style: none;
-      margin: var(--space-1) 0 0;
-      overflow: hidden;
-      padding: 0;
-    }
-
-    .suggestion {
-      cursor: pointer;
-      font-size: var(--font-size-1);
-      padding: var(--space-1);
-      position: relative;
-      transition: color var(--transition-speed);
-      white-space: nowrap;
-      z-index: 1;
-    }
-
-    .suggestion:where(:focus, :hover) {
-      color: var(--color-background);
-    }
-
-    .suggestion::before {
-      background-color: var(--color-text);
-      bottom: var(--space-1);
-      content: ' ';
-      left: var(--space-1);
-      opacity: 0;
-      position: absolute;
-      right: var(--space-1);
-      top: var(--space-1);
-      transform: translateY(0.5em);
-      transition: all var(--transition-speed);
-      z-index: -1;
-    }
-
-    .suggestion:where(:focus, :hover)::before {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .match {
-      color: var(--color-text-subtle);
-      transition: color var(--transition-speed);
-    }
-
-    .suggestion:where(:focus, :hover) .match {
-      color: var(--color-background);
-    }
-
-    @media (min-width: 700px) {
-      .suggestions {
-        flex-direction: row;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles/search.css" />
   <dialog class="dialog">
     <form autocomplete="off" class="form" method="dialog" spellcheck="false">
       <input class="input" title="search" type="text" />
@@ -694,19 +467,8 @@
   customElements.define('search-component', Search);
 </script>
 
-<style>
-  main {
-    align-items: center;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    padding: var(--space-2) var(--space-1);
-    width: 100vw;
-  }
-</style>
-
 <main>
+  <!-- <h1>~</h1><br> -->
   <commands-component></commands-component>
   <search-component></search-component>
 </main>
