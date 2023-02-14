@@ -1,0 +1,24 @@
+main:
+  commandPathDelimiter: '/'
+  commandSearchDelimiter: ' '
+  defaultSearchTemplate: 'https://www.startpage.com/do/dsearch?query={}'
+  openLinksInNewTab: true
+  suggestionLimit: 4
+
+sites:
+  - alias: '0'
+    name: 'Local'
+    url: 'http://localhost'
+    searchTemplate: ':{}'
+    suggestions:
+      - '0 8000'
+      - '0 5500'
+  - alias: '4u'
+    name: '+4u'
+    url: 'https://uuapp.plus4u.net/uu-myterritory-maing01/f79b4ac514754040af18e7687cec165b'
+    suggestions:
+      - '4u/settings'
+      - '4u/userGate/'
+  - alias: 'dc'
+    name: 'Discord'
+    url: 'https://discord.com/channels/@me'
